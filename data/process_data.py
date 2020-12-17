@@ -61,9 +61,16 @@ def clean_data(df):
     
     # concatenate the original dataframe with the new `categories` dataframe
     df = pd.concat([df, categories], axis = 1)
+
     
     # drop duplicates
     df.drop_duplicates(inplace = True)
+
+    # Only keeping columns necessary for modeling
+    df.drop(columns = ['id', 'original','genre'], inplace = True)
+
+    # Only keeping rows where related values are either 0 or 1
+    df = df[df.related != 2]
     
     return df
 

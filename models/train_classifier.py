@@ -38,10 +38,6 @@ def load_data(database_filepath):
     engine = create_engine('sqlite:///{}'.format(database_filepath))
 
     df = pd.read_sql_table(database_filepath, engine)
-    df.drop(columns = ['id', 'original','genre'], inplace = True)
-    
-    # Only keeping rows where related values are either 0 or 1
-    df = df[df.related != 2]
     
     #Separating into X and Y dataframes
     X = df['message']
