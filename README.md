@@ -4,7 +4,7 @@
 
 This project is to train a model for categorizing messages received by disaster response teams. The model is then deployed in a web-app, where we can also see visualizations of the training data the model was built on.
 
-The model is trained on real-world data received from disaster response teams. 
+The model is trained on real-world data received during disaster events, and is intended to be used to categorize new messages, so that they can be directed to the appropriate relief agency.
 
 ## Details
 
